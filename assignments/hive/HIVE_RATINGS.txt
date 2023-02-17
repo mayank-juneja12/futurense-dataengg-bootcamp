@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS ratings
+(uid int, mid int, ratiing float, tim string)
+COMMENT 'ratings details'
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+ALTER TABLE ratings SET TBLPROPERTIES('skip.header.line.count'='1');
+
+LOAD DATA LOCAL INPATH '/home/mayank_juneja/futurense_hadoop-pyspark/ml-latest-small/'
